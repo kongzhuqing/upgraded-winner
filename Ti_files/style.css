@@ -229,13 +229,13 @@ body {
 .Timages1{
     width: 100%;
     height: 3.2rem;
-    background: url(images/images/title.png) no-repeat;
+    background: url('images/images/title.png') no-repeat;
     background-size: 100%;
 }
 .Timages2{
     width: 90%;
     height: 100%;
-    background: url(images/images/mai.png) no-repeat;
+    background: url('images/images/mai.png') no-repeat;
     margin-left: 10%;
     margin-right: 10%;
     margin-top: -1%;

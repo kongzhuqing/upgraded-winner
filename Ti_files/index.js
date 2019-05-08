@@ -59,8 +59,8 @@ var videoPlayer = new MMD.VideoPlayer(
 
 
 // loading
-var imgPath = '//game.gtimg.cn/images/timi/act/a20181212timi/';
-var arrImgOne = ['loading_text.png', 'luodi.jpg', 'play_text.png', 'share.png', 'start_btn_active.png', 'start_btn.png', 'start_text.png', 'lingqu.png', 'share_btn.png', 'again.png', 'lingqu1.png'];
+var imgPath = 'Ti_files/images/images/';
+var arrImgOne = ['loading_text.png', 'luodi.jpg', 'share.png', 'start_btn_active.png', 'start_btn.png',  'share_btn.png', 'again.png', ];
 var percent = 0;
 var $processInner = $('#processInner')
 var $playBtn = $('#playBtn')
@@ -184,5 +184,3 @@ $(window).on('scroll.elasticity', function (e) {
 //     $('#replay').show()
 //     // $landPage.css('backgroundImage', 'url(' + imgPath + 'luodi_19.jpg)');
 // }
-
-
