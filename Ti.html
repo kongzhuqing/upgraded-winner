@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html style="font-size: 50px;">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=5,initial-scale=1.0,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>dome 测试</title>
+		<link rel="stylesheet" href="./Ti_files/style.css">
+		<script>
+			var remTimer
+
+			function h() {
+				var w = document.documentElement.clientWidth || document.body.clientWidth;
+				document.documentElement.style.fontSize = (w / 750 * 100) + "px";
+			}
+
+			function reFont() {
+				clearTimeout(remTimer)
+				remTimer = setTimeout(function() {
+					h()
+				}, 300);
+			}
+			window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", reFont, false);
+			reFont()
+		</script>
+		<style type="text/css">
+			.IIV::-webkit-media-controls-play-button,
+			.IIV::-webkit-media-controls-start-playback-button {
+				opacity: 0;
+				pointer-events: none;
+				width: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--//game.gtimg.cn/images/yxzj/cp/a20180119story-->
+		<!--	参数简易说明:
+					1.view-mode = "v" "v"竖屏,"h"横屏;
+					2.view-rotation="auto" 默认"auto" 自动旋转,"v"竖屏可视,"h"横屏可视;
+					3.view-scale="exactfit" 缩放模式 默认"exactfit";
+					              "exactfit":高宽等于屏幕高宽;
+					              "noborder":裁剪铺满;
+					              "noscale":不缩放;
+					              "showall":显示全部;
+					              "width":宽度等于屏幕宽;
+					              "height":高度等于屏幕高;
+					4.view-align="",默认为"" 居中;
+					              "t":靠顶;
+					              "l":靠左;
+					              "r":靠右;
+					              "b":靠底;
+					      可以结合一起用，比如"tl","tr","bl","br";
+					5.view-width="400" 目标宽 默认"400";
+					6.view-height="400" 目标高 默认"400";
+					-->
+		<div class="video-bar">
+			<div class="p-video" view-mode="v" view-rotation="auto" view-scale="noborder" view-width="750" view-height="1334" view-align="t" style="position: absolute; transform-origin: 0% 0%; width: 750px; height: 1334px; overflow: hidden; display: block; transform: matrix3d(0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);">
+				<!--主视频-->
+				<div style="position: absolute;">
+					<video id="video" style="display:none;" preload="auto" x-webkit-airplay="true" airplay="allow" webkit-playsinline="true" playsinline="true"></video>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="skip" id="skip" style="display: block"></div>
+		<!--加载页-->
+		<div class="loading-bar" id="loading">
+			<div class="loading-box" id="loadingInner">
+				<div class="loading-text"></div>
+				<div class="process">
+					<div class="inner" id="processInner" style="width: 81.8182%;"></div>
+				</div>
+			</div>
+			<div id="playBtn" style="display: none" class="play-btn">
+			</div>
+		</div>
+
+		<!-- 落地页 -->
+		<div class="land-page" id="landPage" style="display: none">
+			<div class="Timages1"></div>
+			<div class="Timages2"></div>
+			<div class="btn-bar">
+				<a href="https://www.wjx.cn/m/38062735.aspx">
+					<div  class="Tbang"></div>
+				</a>
+				<div class="share" id="share" onclick="PTTSendClick(&#39;btn&#39;,&#39;share&#39;,&#39;分享&#39;)"></div>
+				<div class="gift replay" id="replay" onclick="PTTSendClick(&#39;btn&#39;,&#39;replay&#39;,&#39;重新播放&#39;)">再看一遍</div>
+				
+			
+			</div>
+			<div class="copyright">
+				<!--*业务清单：话费、流量、账单积分、查询/取消已开业务、星级服务、查询套餐（资费详情/使用情况）、返还记录、充值记录、归属地、宽带信息、查询宽带覆盖范围、查询PUK码-->
+			</div>
+			
+		</div>
+
+		<!--微信分享-->
+		<div class="share-wx" style="display: none;" id="shareBar">
+			<img src="./Ti_files/images/images/share.png" class="img">
+		</div>
+
+		<script src="./Ti_files/mediaURLData_https.js"></script>
+		<!--<script src="./Ti_files/ping_tcss_tgideas_https_min.js"></script>-->
+		<script>
+			var setSite = {
+				siteType: "a20181212timi",
+				pageType: "index",
+				pageName: "首页",
+				osact: 0,
+				ingame: 0,
+				stayTime: 0
+			}
+			if(typeof(pgvMain) == 'function') pgvMain();
+		</script>
+		<script src="./Ti_files/wxmoment.min.js"></script>
+		<script src="./Ti_files/mmd-plugin.min.1.0.2.js"></script>
+		<script src="./Ti_files/mmd.videoplayer.min.1.0.2.js"></script>
+		<script src="./Ti_files/index.js"></script>
+		<!--<script src="./Ti_files/TGMobileShare.min.js"></script>-->
+
+		<!--<script>
+			TGMobileShare({
+				shareTitle: '当TiMi一声响起的时候……', //不设置或设置为空时，页面有title，则调取title
+				shareDesc: '这是属于我们十年的回忆', //不设置或设置为空时，页面有Description，则调取Description
+				shareImgUrl: 'https://game.gtimg.cn/images/timi/act/a20181212timi/share_icon.jpg', //分享图片尺寸200*200，且填写绝对路径
+				actName: 'a20181212timi' //点击流命名，用于统计分享量，专题一般采用目录名称如a20151029demo
+			});
+		</script>-->
+		<script>
+			new WxMoment.OrientationTip();
+		</script>
+		<script src="../Ti_files/ping_tcss_tgideas_https_min.js"></script>
+</html>
